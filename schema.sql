@@ -1,7 +1,3 @@
-DROP DATABASE IF EXISTS indoors;
-CREATE DATABASE indoors;
-USE indoors;
-
-DROP DATABASE IF EXISTS outdoors;
-CREATE DATABASE outdoors;
-USE outdoors;
+DROP DATABASE IF EXISTS dog_friendly;
+CREATE DATABASE dog_friendly;
+USE dog_friendly;
