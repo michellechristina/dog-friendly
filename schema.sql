@@ -1,0 +1,7 @@
+DROP DATABASE IF EXISTS indoors;
+CREATE DATABASE indoors;
+USE indoors;
+
+DROP DATABASE IF EXISTS outdoors;
+CREATE DATABASE outdoors;
+USE outdoors;
