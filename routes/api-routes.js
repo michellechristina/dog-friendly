@@ -27,8 +27,8 @@ module.exports = function (app) {
         db.Todo.create({
             name: req.body.name,
             location: req.body.location,
-            dogFriendly: req.body.dogFriendly,
-            rating: req.body.rating
+            dogFriendly: true,
+            rating: 5
         }).then(function (dbIndoors) {
             // Allows access to new entry 
             res.json(dbIndoors);
