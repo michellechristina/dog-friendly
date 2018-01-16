@@ -1,9 +1,17 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var places = sequelize.define('places', {
+
+  var Places = sequelize.define('places', {
     place_id: DataTypes.STRING,
     category: DataTypes.STRING
- 
   });
-  return places;
+
+  //Each place has many Reviews
+  Places.associate = function(models) {
+    Places.hasMany(models.reviews, {
+      onDelete: "cascade"
+    });
+  };
+
+  return Places;
 };
