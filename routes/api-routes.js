@@ -3,14 +3,7 @@ const axios = require('axios');
 
 module.exports = function (app) {
 
-    //GET all indoor places
-    app.get("/api/allIndoors", function (req, res) {
-        // findAll returns all entries for a table when used with no options
-        db.Indoors.findAll({}).then(function (dbIndoors) {
-            // We have access to the todos as an argument inside of the callback function
-            res.json(dbIndoors);
-        });
-    });
+ 
 
     //GET all outdoor places
     app.get("/api/allOutdoors", function (req, res) {
@@ -62,17 +55,36 @@ module.exports = function (app) {
           })
             .then(function (response) {
               const data = response.data.results;
-            //   console.log(data);
+              console.log("===================")
+              console.log("DATA:")
+              console.log(data);
+
+             
 
 
 /// query places DB here
-app.get("/api/places", function(req, res) {
-    // 1. Add a join to include all of each Author's Posts
-    db.places.findAll({ include: [ db.Reviews ]}).then(function(dbPlaces) {
-      res.json(dbPlaces);
+     //GET all places
+     app.get("/api/places", function (req, res) {
+        // findAll returns all entries for a table when used with no options
+        db.places.findAll({}).then(function (dbPlaces) {
+            // We have access to the todos as an argument inside of the callback function
+            res.json(dbPlaces);
+        });
     });
-  });
+    console.log("===================")
+    console.log("PLACES:")
+    console.log(dbPlaces.place_id[0]);
 
+    //empty array to catch matching place id from google places & places DB
+var matchedSpots =[];
+
+var spotIds = dbPlaces.filter(function(a) {
+    return a.place_id;
+})
+
+
+
+    
 
 // if matched place ID > ruff spots reviews page html route
 
