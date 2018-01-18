@@ -1,5 +1,6 @@
 var db = require("../models");
 const axios = require('axios');
+const fs= require('fs');
 
 module.exports = function (app) {
 
@@ -24,6 +25,7 @@ module.exports = function (app) {
      //GET all places
      app.get("/api/places/:newPlace/:latitude/:longitude", function (req, res) {
         // findAll returns all entries for a table when used with no options
+        console.log(req.params);
         db.places.findAll({})
             .then(function (dbPlaces) {
             // We have access to the todos as an argument inside of the callback function
@@ -39,6 +41,9 @@ module.exports = function (app) {
                 }
               })
                 .then(function (response) {
+                    console.log("===================")
+                    console.log("RESPONSE:")
+                    console.log(response.data); 
                   const googlePlaces = response.data.results;
                   console.log("===================")
                   console.log("DATA:")
@@ -55,12 +60,58 @@ module.exports = function (app) {
                   });
                  console.log("SPOTIDS")
                  console.log(spotIds);
+
+                  // if spotIds.length is greater than 0, then you have a known ruff spot
+                  if (spotIds.length>0) {
+
+                    
+                    var ruffSpots = [
+                        {
+                            place_id: "jrkwoh4rhiyir9fw",
+                            name: "Rochester Commons",
+                        },
+                        {
+                            place_id: "hjkhjkhui2342uihu",
+                            name: "Rochester Opera House",
+                        }
+                    ];
+                    var obj = {};
+                    obj.data = ruffSpots;
+                    obj.ruffSpots = true;
+
+                    res.send(obj);
+                  }
+
+
+                  // ELSE you have no known ruff spots. return 5 google places to Search Results 2B
+                  else {
+                      // the whole google place object. limit to 5.
+                    var googleSpotsNoKnownRuffSpots = [
+                        {
+                            place_id: "jrkwoh4rhiyir9fw",
+                            name: "We are in data set 2 Commons",
+                        },
+                        {
+                            place_id: "hjkhjkhui2342uihu",
+                            name: "No Know Ruff Spots",
+                        }
+                    ];
+                    var obj = {};
+                    obj.data = googleSpotsNoKnownRuffSpots;
+                    obj.ruffSpots = false;
+
+                    res.send(obj);
+                  }
+
+
+
+
                 })
                 .catch(function (error) {
                 //   console.log(error);
                 });
 
-            res.json(dbPlaces);
+            // res.json(dbPlaces);
         });
     });
     console.log("===================")
