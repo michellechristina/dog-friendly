@@ -3,4 +3,4 @@ var googlePlaces = JSON.parse(localStorage.getItem('data'));
 
 console.log(googlePlaces);
 
-$('#places').html(JSON.stringify(googlePlaces));
+$('#places').html(`<pre>${JSON.stringify(googlePlaces,null,2)}</pre>`);

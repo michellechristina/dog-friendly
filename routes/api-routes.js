@@ -59,20 +59,36 @@ module.exports = function (app) {
                     })
                   });
                  console.log("SPOTIDS")
-                 console.log(spotIds);
+                 console.log(JSON.stringify(spotIds,null,2));
 
                   // if spotIds.length is greater than 0, then you have a known ruff spot
                   if (spotIds.length>0) {
 
-                    
+                    // this is the browse view object
                     var ruffSpots = [
                         {
-                            place_id: "jrkwoh4rhiyir9fw",
-                            name: "Rochester Commons",
+                            place_id: "ChIJ-QHaz2yb4okR_k-QLFvapa4",  // google response
+                            name: "Rochester Commons", // google response: 
+                            address: "195 Ten Rod Road, Rochester", // google response: vicinity
+                            rating: 2, // review table: friendly_rating
+                            reviews: [ 
+                                {review: "this is a review"},
+                                {review: "this is a 2nd review"}
+                            ],  // review table
+                            photo: "<img src='https://placehold.it/200x200' alt=''/>", // ?
+                            date_added: "11/20/2017" // places table: created at
                         },
                         {
-                            place_id: "hjkhjkhui2342uihu",
-                            name: "Rochester Opera House",
+                            place_id: "ChIJ-QHaz2yb4okR_k-QLFvapa4",  // google response
+                            name: "Rochester Opera House", // google response: 
+                            address: "195 Main St, Rochester", // google response: vicinity
+                            rating: 2, // review table: friendly_rating
+                            reviews: [ 
+                                {review: "this is a review"},
+                                {review: "this is a 2nd review"}
+                            ],  // review table
+                            photo: "<img src='https://placehold.it/200x200' alt=''/>", // ?
+                            date_added: "10/20/2016" // places table: created at
                         }
                     ];
                     var obj = {};
@@ -85,22 +101,38 @@ module.exports = function (app) {
 
                   // ELSE you have no known ruff spots. return 5 google places to Search Results 2B
                   else {
-                      // the whole google place object. limit to 5.
-                    var googleSpotsNoKnownRuffSpots = [
-                        {
-                            place_id: "jrkwoh4rhiyir9fw",
-                            name: "We are in data set 2 Commons",
-                        },
-                        {
-                            place_id: "hjkhjkhui2342uihu",
-                            name: "No Know Ruff Spots",
-                        }
-                    ];
+                      // the whole google place object. limit to 5. the results view
+                      var googleSpotsNoKnownRuffSpots = googlePlaces.map(gPlace => {
+                        var object = {};
+                        object.place_id=gPlace.place_id;
+                        object.name=gPlace.name;
+                        object.address=gPlace.vicinity;
+                        object.photo='https://placehold.it/200x200'; // probably going to remain hardcoded. this is a separate api call.
+                        return object;
+                    });
+
+                    googleSpotsNoKnownRuffSpots.length=5;
+
+                    // var googleSpotsNoKnownRuffSpots = [
+                    //     {
+                    //         place_id: "ChIJ-QHaz2yb4okR_k-QLFvapa4",  // google response
+                    //         name: "Rochester Commons", // google response: 
+                    //         address: "195 Ten Rod Road, Rochester", // google response: vicinity
+                    //         photo: "<img src='https://placehold.it/200x200' alt=''/>", // ?
+                    //     },
+                    //     {
+                    //         place_id: "ChIJ-QHaz2yb4okR_k-QLFvapa4",  // google response
+                    //         name: "Rochester Opera House", // google response: 
+                    //         address: "195 Main St, Rochester", // google response: vicinity
+                    //         photo: "<img src='https://placehold.it/200x200' alt=''/>", // ?
+                    //     }
+                    // ];
                     var obj = {};
                     obj.data = googleSpotsNoKnownRuffSpots;
                     obj.ruffSpots = false;
 
                     res.send(obj);
+                    // res.send(googlePlaces);
                   }
 
 

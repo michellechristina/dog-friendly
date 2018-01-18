@@ -3,4 +3,4 @@ var ruffSpots = JSON.parse(localStorage.getItem('data'));
 
 console.log(ruffSpots);
 
-$('#places').html(JSON.stringify(ruffSpots));
+$('#places').html(`<pre>${JSON.stringify(ruffSpots,null,2)}</pre>`);

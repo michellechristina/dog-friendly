@@ -38,26 +38,30 @@ $("#btn-place").on("click", function (event) {
     // };
 
     // This goes server side, where google places api is queried & results are returned.
-    
+
     $.ajax({
         method: "get",
         url: `/api/places/${newPlace}/${latitude}/${longitude}`,
-        success: function(response){
+        success: function (response) {
             console.log(response);
 
 
             /// store response in local storage, it will have data you need to build the 2 views
             localStorage.setItem('data', JSON.stringify(response.data));
             /// if response.ruffSpots then redirect to browse.html
-            window.location="browse.html";
+            if (response.ruffSpots) {
+                window.location = "browse.html";
+            }
             /// else redirect to result.html
-            window.location="result.html";
+            else {
+                window.location = "result.html"
+            };
 
-        }
+        } // this ends the callback function
     })
-   
-    
-    
+
+
+
     // $.post("/api/search", data)
     //     .then(function (results, status) {
     //         console.log("-------------------------");
