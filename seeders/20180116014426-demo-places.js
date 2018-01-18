@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('places', [{
-        place_id: 'ChIJC4qXAsua4okR0RUEyrh_qh4',
+        place_id: 'ChIJ-QHaz2yb4okR_k-QLFvapa4',
         category: 'park',
         createdAt: '2017-12-14 01:23:55',
         updatedAt: '2018-01-02 03:01:19'
