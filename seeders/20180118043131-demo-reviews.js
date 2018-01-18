@@ -2,43 +2,49 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('places', [{
-        place_id: 'ChIJ-QHaz2yb4okR_k-QLFvapa4',
-        category: 'park',
+    return queryInterface.bulkInsert('reviews', [{
+        friendly_rating: 4,
+        review: 'a review goes here',
+        placeId: 1,
         createdAt: '2017-12-14 01:23:55',
         updatedAt: '2018-01-02 03:01:19'
       },
       {
-        place_id: 'ChIJMe2AD06D4okRrGmDpN6udpk',
-        category: 'cafe',
+        friendly_rating: 2,
+        review: 'another review goes here',
+        placeId: 2,
         createdAt: '2017-12-14 01:23:55',
         updatedAt: '2018-01-02 03:01:19'
       },
       {
-        place_id: 'ChIJ_cWe6Wmb4okRfzbGXpc6W3s',
-        category: 'restaurant',
+        friendly_rating: 3,
+        review: 'a review goes here',
+        placeId: 3,
         createdAt: '2017-12-14 01:23:55',
         updatedAt: '2018-01-02 03:01:19'
       },
       {
-        place_id: 'ChIJF3WRqw-X4okRAMwzPjd33TY',
-        category: 'restaurant',
+        friendly_rating: 5,
+        review: 'a review goes here',
+        placeId: 3,
         createdAt: '2017-12-14 01:23:55',
         updatedAt: '2018-01-02 03:01:19'
       },
       {
-        place_id: 'ChIJB5FhGXKX4okRc-wTEGCwpYY',
-        category: 'park',
+        friendly_rating: 4,
+        review: 'a review goes here',
+        placeId: 1,
         createdAt: '2017-12-14 01:23:55',
         updatedAt: '2018-01-02 03:01:19'
       },
       {
-        place_id: 'ChIJx-NLXhCX4okRLIUDciRszCo',
-        category: 'cafe',
+        friendly_rating: 2,
+        review: 'a review goes here',
+        placeId: 1,
         createdAt: '2017-12-14 01:23:55',
         updatedAt: '2018-01-02 03:01:19'
-      },
-    ], {});
+      }
+    ])
   },
 
   down: (queryInterface, Sequelize) => {

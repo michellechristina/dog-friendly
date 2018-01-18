@@ -1,6 +1,5 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-const axios = require('axios');
 const path = require('path');
 
 // Sets up the Express App

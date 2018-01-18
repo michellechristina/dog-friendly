@@ -31,19 +31,43 @@ $("#btn-place").on("click", function (event) {
 
     const url = "https://maps.googleapis.com/maps/api/place/autocomplete/xml?input=" + newPlace + "&location=" + latitude + "," + longitude + "&radius=500&key=AIzaSyDF3cJTRy-rvv-j_2VUSZJs22QjvRzVVcg";
 
-    const data = {
-        newPlace: newPlace,
-        latitude: latitude,
-        longitude: longitude
-    };
+    // const data = {
+    //     newPlace: newPlace,
+    //     latitude: latitude,
+    //     longitude: longitude
+    // };
 
     // This goes server side, where google places api is queried & results are returned.
-    $.post("/api/search", data)
-        .then(function (results, status) {
-            console.log("-------------------------");
-            console.log("results");
-            console.log(results);
 
-        });
+    $.ajax({
+        method: "get",
+        url: `/api/places/${newPlace}/${latitude}/${longitude}`,
+        success: function (response) {
+            console.log(response);
+
+
+            /// store response in local storage, it will have data you need to build the 2 views
+            localStorage.setItem('data', JSON.stringify(response.data));
+            /// if response.ruffSpots then redirect to browse.html
+            if (response.ruffSpots) {
+                window.location = "browse.html";
+            }
+            /// else redirect to result.html
+            else {
+                window.location = "result.html"
+            };
+
+        } // this ends the callback function
+    })
+
+
+
+    // $.post("/api/search", data)
+    //     .then(function (results, status) {
+    //         console.log("-------------------------");
+    //         console.log("results");
+    //         console.log(results);
+
+    //     });
 
 })
