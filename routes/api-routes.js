@@ -25,11 +25,11 @@ module.exports = function (app) {
      //GET all places
      app.get("/api/places/:newPlace/:latitude/:longitude", function (req, res) {
         // findAll returns all entries for a table when used with no options
-        console.log(req.params);
-        db.places.findAll({})
+        // console.log(req.params);
+       
+        db.places.findAll({include: [ db.reviews ]})
             .then(function (dbPlaces) {
             // We have access to the todos as an argument inside of the callback function
-
             axios({
                 method: 'get',
                 url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json',
@@ -49,48 +49,69 @@ module.exports = function (app) {
                   console.log("DATA:")
                   console.log(googlePlaces); 
 
-                  let spotIds = [];
-
+                  let ruffSpotsInGooglePlaces = [];
+                  debugger
                   googlePlaces.filter(function(gPlace) {
                     return dbPlaces.filter(function(dbPlace) {
+                        
                         if (gPlace.place_id === dbPlace.place_id ) {
-                        spotIds.push(gPlace);
+                            var comboPlace = Object.assign({}, gPlace, dbPlace);
+                            
+                            console.log("===================")
+                  console.log("comboPlace:")
+                            console.log(comboPlace)
+                            ruffSpotsInGooglePlaces.push(comboPlace);
+                            // ruffSpotsInGooglePlaces.push(gPlace);
                       }
                     })
                   });
-                 console.log("SPOTIDS")
-                 console.log(JSON.stringify(spotIds,null,2));
+                  
+                 console.log("ruffSpotsInGooglePlaces");
+                 console.log(JSON.stringify(ruffSpotsInGooglePlaces,null,2));
 
-                  // if spotIds.length is greater than 0, then you have a known ruff spot
-                  if (spotIds.length>0) {
+                  // if ruffSpotsInGooglePlaces.length is greater than 0, then you have a known ruff spot
+                  if (ruffSpotsInGooglePlaces.length>0) {
 
                     // this is the browse view object
-                    var ruffSpots = [
-                        {
-                            place_id: "ChIJ-QHaz2yb4okR_k-QLFvapa4",  // google response
-                            name: "Rochester Commons", // google response: 
-                            address: "195 Ten Rod Road, Rochester", // google response: vicinity
-                            rating: 2, // review table: friendly_rating
-                            reviews: [ 
-                                {review: "this is a review"},
-                                {review: "this is a 2nd review"}
-                            ],  // review table
-                            photo: "<img src='https://placehold.it/200x200' alt=''/>", // ?
-                            date_added: "11/20/2017" // places table: created at
-                        },
-                        {
-                            place_id: "ChIJ-QHaz2yb4okR_k-QLFvapa4",  // google response
-                            name: "Rochester Opera House", // google response: 
-                            address: "195 Main St, Rochester", // google response: vicinity
-                            rating: 2, // review table: friendly_rating
-                            reviews: [ 
-                                {review: "this is a review"},
-                                {review: "this is a 2nd review"}
-                            ],  // review table
-                            photo: "<img src='https://placehold.it/200x200' alt=''/>", // ?
-                            date_added: "10/20/2016" // places table: created at
-                        }
-                    ];
+                    var ruffSpots = ruffSpotsInGooglePlaces.map(ruffPlace => {
+                            var object = {};
+                        object.place_id=ruffPlace.place_id;
+                        object.name=ruffPlace.name;
+                        object.address=ruffPlace.vicinity;
+                        object.photo='https://placehold.it/200x200';
+                        object.date_added=ruffPlace.created_at;
+                        object.rating=5; // this needs to be fixed - average the ratings
+                        object.reviews=ruffPlace.reviews;
+                        return object;
+                    });
+
+                    // var ruffSpots=[
+                    //     {
+                    //         place_id: "ChIJ-QHaz2yb4okR_k-QLFvapa4",  // google response
+                    //         name: "Rochester Commons", // google response: 
+                    //         address: "195 Ten Rod Road, Rochester", // google response: vicinity
+                    //         rating: 2, // review table: friendly_rating
+                    //         reviews: [ 
+                    //             {review: "this is a review"},
+                    //             {review: "this is a 2nd review"}
+                    //         ],  // review table
+                    //         photo: "<img src='https://placehold.it/200x200' alt=''/>", // ?
+                    //         date_added: "11/20/2017" // places table: created at
+                    //     },
+                    //     {
+                    //         place_id: "ChIJ-QHaz2yb4okR_k-QLFvapa4",  // google response
+                    //         name: "Rochester Opera House", // google response: 
+                    //         address: "195 Main St, Rochester", // google response: vicinity
+                    //         rating: 2, // review table: friendly_rating
+                    //         reviews: [ 
+                    //             {review: "this is a review"},
+                    //             {review: "this is a 2nd review"}
+                    //         ],  // review table
+                    //         photo: "<img src='https://placehold.it/200x200' alt=''/>", // ?
+                    //         date_added: "10/20/2016" // places table: created at
+                    //     }
+                    // ];
+
                     var obj = {};
                     obj.data = ruffSpots;
                     obj.ruffSpots = true;
@@ -111,6 +132,7 @@ module.exports = function (app) {
                         return object;
                     });
 
+                    // this limits the result to 5 :-)
                     googleSpotsNoKnownRuffSpots.length=5;
 
                     // var googleSpotsNoKnownRuffSpots = [
