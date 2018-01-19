@@ -6,13 +6,13 @@ module.exports = function (app) {
 
     //Fetches all places from the DB
     app.get('/api/places', function (req, res) {
-      db.Places.findAll().then(function (placesdb) {
+      db.places.findAll().then(function (placesdb) {
           res.json(placesdb);
       })
   });
 
   app.get('/api/reviews', function (req, res) {
-      db.Reviews.findAll().then(function (reviewsdb) {
+      db.reviews.findAll().then(function (reviewsdb) {
           res.json(reviewsdb);
       })
   });
