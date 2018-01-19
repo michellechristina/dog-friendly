@@ -2,56 +2,171 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruff Spots</title>
+  <!-- Material Icon CDN -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <!-- Your custom styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Used as an example only to position the footer at the end of the page.
+    You can delete these styles or move it to your custom css file -->
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
 
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF3cJTRy-rvv-j_2VUSZJs22QjvRzVVcg"></script>
-    <title>Ruff Spot | Woof </title>
+    main {
+      flex: 1 0 auto;
+    }
+  </style>
 </head>
 
 <body>
-    <!--Home page here-->
-
-    <nav>
-        <div class="nav-wrapper">
-            <a href="" class="brand-logo">Ruff Spots</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li>
-                    <a href="search.html">Search</a>
-                </li>
-                <li>
-                    <a href="browse.html">Near Me
-                        <!-- <span class="new badge">4</span> -->
-                    </a>
-                </li>
-                <li>
-                    <a href="search.html">Add</a>
-                </li>
-                <li>
-
-                    </a>
-                </li>
-            </ul>
+  <header>
+    <nav class="brown lighten-2">
+      <div class="nav-wrapper">
+        <div class="container">
+          <a href="#" class="brand-logo">RUFF SPOTS</a>
+          <a href="#" data-activates="mobile-menu" class="button-collapse">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a href="#">item1</a>
+            </li>
+            <li>
+              <a href="#">item2</a>
+            </li>
+            <li>
+              <a href="#">item3</a>
+            </li>
+            <li>
+              <a href="#">item4</a>
+            </li>
+          </ul>
+          <ul class="side-nav" id="mobile-menu">
+            <li>
+              <div class="userView">
+                <div class="background">
+                  <img src="http://lorempixel.com/output/abstract-q-c-640-480-10.jpg" alt="Background Sidenav">
+                </div>
+                <a href="#!user">
+                  <img class="circle" src="http://lorempixel.com/output/people-q-c-640-480-9.jpg" alt="User Image Sidenav">
+                </a>
+                <a href="#!name">
+                  <span class="white-text name">John Doe</span>
+                </a>
+                <a href="#!email">
+                  <span class="white-text email">jdandturk@gmail.com</span>
+                </a>
+              </div>
+            </li>
+            <li>
+              <a href="#">item1</a>
+            </li>
+            <li>
+              <a href="#">item2</a>
+            </li>
+            <li>
+              <a href="#">item3</a>
+            </li>
+            <li>
+              <a href="#">item4</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
+  </header>
+  <main>
+    <!-- Your content here -->
+    <div class="row center-align">
+      <div class="col s12"></div>
+      <h2 class="logo center-align">RUFF SPOTS LOGO HERE</h2>
+      
+    </div>
+
+
+    <div class="row center-align">
+      <div class="col s12">
+      <a class="waves-effect waves-light btn">Search</a>
+      <a class="waves-effect waves-light btn">Add   </a>
+    </div>
+    </div>
+
+    <div class="row center-align">
+    <div class="col s6 offset-s3">
+    <a class="waves-effect waves-light btn">Near Me</a>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col s12 m8 offset-m2">
+    <h2 class="header center-align">About Ruff Spots</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="https://lorempixel.com/100/190/nature/6">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>It’s Saturday,
+            You have the day off… And you’re looking for something to do; alone or with your significant other, a friend, a sibling, parents, maybe you’re even accompanied by a child of your own, but either way… you’re looking for something to do, get out of the house, enjoy yourself… and as you ponder where you’re going to go and what you’re going to do…
+            you feel that familiar consistent thud on the floor, followed by panting and wagging…
+            and you remember the final member to your troop, your four-legged furry friend.
+            Now, that changes everything.
+            You have to completely reconsider your original options. Balancing out daylight with in door activities for everyone. You’ve tried google and yelp, but no reliable source is available for finding a place for you and your pup to prance… leaving your in a rough spot...
+             
+            Ruff Spots  allows you to have a great dog friendly day!
+            </p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+    
+
+  </main>
+  <footer class="page-footer cyan">
+    <!-- <div class="container">
+      <div class="row"> --> 
+        <!-- <div class="col s12 m8 l6">
+          <h5 class="white-text">First Footer Content</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col s12 m4 l6">
+          <h5 class="white-text">Second Footer Content</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div> -->
+      <!-- </div>
+    </div> -->
+    <!-- <div class="footer-copyright"> -->
+      <div class="container">
+        © 2017 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    <!-- </div> -->
+  </footer>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script> 
+  <!-- Materialize JS CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script>
+    $("document").ready(function () {
+      $(".button-collapse").sideNav();
+    });
+  </script>
 
 </body>
 
