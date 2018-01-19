@@ -4,8 +4,18 @@ const fs = require('fs');
 
 module.exports = function (app) {
 
+    //Fetches all places from the DB
+    app.get('/api/places', function (req, res) {
+      db.Places.findAll().then(function (placesdb) {
+          res.json(placesdb);
+      })
+  });
 
-
+  app.get('/api/reviews', function (req, res) {
+      db.Reviews.findAll().then(function (reviewsdb) {
+          res.json(reviewsdb);
+      })
+  });
 
   // Google Places API search, sends data back to front end (search.js)
   // app.post('/api/search', (req, res) => {
