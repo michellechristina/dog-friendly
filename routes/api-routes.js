@@ -86,6 +86,7 @@ module.exports = function (app) {
               });
 
               // there are ruff spots, stuff them into a variable & send them back to frontend
+              // these are key value pairs being passed back.
               var obj = {};
               obj.data = ruffSpots;
               obj.ruffSpots = true;
@@ -110,6 +111,8 @@ module.exports = function (app) {
               googleSpotsNoKnownRuffSpots.length = 5;
 
               // there are no ruff spots, stuff them into a variable & send them back to frontend
+              // this should probably be reformated. it's a bit confusing, but
+              // these are key value pairs being passed back.
               var obj = {};
               obj.data = googleSpotsNoKnownRuffSpots;
               obj.ruffSpots = false;
@@ -125,6 +128,5 @@ module.exports = function (app) {
         // res.json(dbPlaces);
       });
   });
-
 
 };
