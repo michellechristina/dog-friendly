@@ -3,7 +3,11 @@ var googlePlaces = JSON.parse(localStorage.getItem('data'));
 
 console.log(googlePlaces);
 
-// $('#places').html(`<pre>${JSON.stringify(googlePlaces, null, 2)}</pre>`);
+$(document).ready(function () {
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('#addPlace').modal();
+});
+
 
 //append each result as a clickable entry to the DOM
 //when an entry is pressed, add it to the database.  
@@ -14,6 +18,7 @@ for (var i = 0; i < googlePlaces.length; i++) {
     var resultDiv = $('<div>');
     resultDiv.addClass('col-med-4');
     resultDiv.addClass('center-align')
+    resultDiv.addClass('place')
 
     //create the actual card
     var resultCard = $('<div>');
@@ -21,44 +26,12 @@ for (var i = 0; i < googlePlaces.length; i++) {
     resultCard.addClass('hoverable');
     //append the card to the column div
     resultDiv.append(resultCard);
-
-    //add photo to card
-    var resultPhoto = $('<div>');
-    resultPhoto.addClass('card-image');
-    resultPhoto.addClass('waves-effect');
-    resultPhoto.addClass('waves-block');
-    resultPhoto.addClass('waves-light');
-    // Add photo div to the card
-    resultCard.append(resultPhoto);
-
-    // create the photo
-
-    var resultImg = googlePlaces[i].photo;
-    var cardImg = $('<img>').attr({
-        'class': 'activator',
-        'src': resultImg,
-    });
-    resultPhoto.append(cardImg);
-
-
-    // Add photo to the card
-    console.log("build photo : " + googlePlaces[i].photo);
-
-
-
-    // // actually get photo
-    // var googleImg = $('<img>');
-    // googleImg.src(googlePlaces[i].photo);
-    // // add image to card
-    // esultCard.append(googleImg);
-
     //create a card title
     var cardTitle = $('<div>');
     cardTitle.addClass('card-title');
     cardTitle.html(googlePlaces[i].name);
     //append the card title to the card
     resultCard.append(cardTitle);
-
     //Create the location
     var address = $('<div>');
     address.addClass('card-content');
@@ -66,24 +39,29 @@ for (var i = 0; i < googlePlaces.length; i++) {
     //Add location to the card
     resultCard.append(address);
 
-
-
-
     //Add the div containing the card to the DOM
     places.append(resultDiv);
 
 }
-// $('#title').html(googlePlaces[0].name)
+
+$(".place").on("click", function (event) {
+    // Prevent form from submitting
+    event.preventDefault();
+    var title = $(this).children().children()[0]
+    title = title.innerHTML;
+    console.log(title);
+    var location = $(this).children().children()[1];
+    location = location.innerHTML;
+    console.log(location);
+    // declare variables for title and body
+    // replace the modal title and body with those attributes
+    // then open the modal
+    $('#title').html(title);
+    $('#location').html(location);
+    $('#addPlace').modal('open');
+})
 
 
-//Need to create this using jquery...
 
-// <div class="row">
-// <div class="col s12 m5">
-//   <div class="card-panel teal">
-//     <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-//     I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-//     </span>
-//   </div>
-// </div>
-// </div>
+
+
