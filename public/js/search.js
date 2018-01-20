@@ -71,3 +71,8 @@ $("#btn-place").on("click", function (event) {
     //     });
 
 })
+// this activates the modal when "add a ruff spot" button is clicked on the index.html "home page"
+$(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
