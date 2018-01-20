@@ -5,7 +5,6 @@ var longitude = "";
 $("#input-zipCode").on("blur", function (event) {
 
     var zipCode = $('#input-zipCode').val().trim();
-    var radius = 10;
 
     //Geocoder - takes zipcode & parses into Latidue & Longitude
     $.get(
@@ -29,13 +28,8 @@ $("#btn-place").on("click", function (event) {
     var newPlace = place.split(" ").join("+");
     console.log(newPlace);
 
-    const url = "https://maps.googleapis.com/maps/api/place/autocomplete/xml?input=" + newPlace + "&location=" + latitude + "," + longitude + "&radius=500&key=AIzaSyDF3cJTRy-rvv-j_2VUSZJs22QjvRzVVcg";
-
-    // const data = {
-    //     newPlace: newPlace,
-    //     latitude: latitude,
-    //     longitude: longitude
-    // };
+    //delete this?
+    // const url = "https://maps.googleapis.com/maps/api/place/autocomplete/xml?input=" + newPlace + "&location=" + latitude + "," + longitude + "&radius=500&key=AIzaSyDF3cJTRy-rvv-j_2VUSZJs22QjvRzVVcg";
 
     // This goes server side, where google places api is queried & results are returned.
 
@@ -47,6 +41,8 @@ $("#btn-place").on("click", function (event) {
 
 
             /// store response in local storage, it will have data you need to build the 2 views
+            // we stringify the response data because local storage only supports key value pairs
+
             localStorage.setItem('data', JSON.stringify(response.data));
             /// if response.ruffSpots then redirect to browse.html
             if (response.ruffSpots) {
@@ -59,15 +55,5 @@ $("#btn-place").on("click", function (event) {
 
         } // this ends the callback function
     })
-
-
-
-    // $.post("/api/search", data)
-    //     .then(function (results, status) {
-    //         console.log("-------------------------");
-    //         console.log("results");
-    //         console.log(results);
-
-    //     });
 
 })
