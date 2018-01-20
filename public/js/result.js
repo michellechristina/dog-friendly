@@ -22,10 +22,40 @@ for (var i = 0; i < googlePlaces.length; i++) {
     //append the card to the column div
     resultDiv.append(resultCard);
 
+    //add photo to card
+    var resultPhoto = $('<div>');
+    resultPhoto.addClass('card-image');
+    resultPhoto.addClass('waves-effect');
+    resultPhoto.addClass('waves-block');
+    resultPhoto.addClass('waves-light');
+    // Add photo div to the card
+    resultCard.append(resultPhoto);
+
+    // create the photo
+
+    var resultImg = googlePlaces[i].photo;
+    var cardImg = $('<img>').attr({
+        'class': 'activator',
+        'src': resultImg,
+    });
+    resultPhoto.append(cardImg);
+
+
+    // Add photo to the card
+    console.log("build photo : " + googlePlaces[i].photo);
+
+
+
+    // // actually get photo
+    // var googleImg = $('<img>');
+    // googleImg.src(googlePlaces[i].photo);
+    // // add image to card
+    // esultCard.append(googleImg);
+
     //create a card title
     var cardTitle = $('<div>');
     cardTitle.addClass('card-title');
-    cardTitle.html(googlePlaces[i].name)
+    cardTitle.html(googlePlaces[i].name);
     //append the card title to the card
     resultCard.append(cardTitle);
 
@@ -35,6 +65,9 @@ for (var i = 0; i < googlePlaces.length; i++) {
     address.html(googlePlaces[i].address);
     //Add location to the card
     resultCard.append(address);
+
+
+
 
     //Add the div containing the card to the DOM
     places.append(resultDiv);
@@ -54,4 +87,3 @@ for (var i = 0; i < googlePlaces.length; i++) {
 //   </div>
 // </div>
 // </div>
-      
