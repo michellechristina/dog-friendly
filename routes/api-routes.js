@@ -62,7 +62,7 @@ module.exports = function (app) {
             console.log(googlePlaces);
 
             let ruffSpotsInGooglePlaces = [];
-            debugger
+        
             googlePlaces.filter(function (gPlace) {
               return dbPlaces.filter(function (dbPlace) {
 
@@ -72,14 +72,16 @@ module.exports = function (app) {
                   console.log("===================")
                   console.log("comboPlace:")
                   console.log(comboPlace)
-                  // ruffSpotsInGooglePlaces.push(comboPlace);
-                  ruffSpotsInGooglePlaces.push(gPlace);
+
+                  ruffSpotsInGooglePlaces.push(comboPlace);
+                  // debugger
+                  // ruffSpotsInGooglePlaces.push(gPlace);
                 }
               })
             });
 
-            console.log("ruffSpotsInGooglePlaces");
-            console.log(JSON.stringify(ruffSpotsInGooglePlaces, null, 2));
+            // console.log("ruffSpotsInGooglePlaces");
+            // console.log(JSON.stringify(ruffSpotsInGooglePlaces, null, 2));
 
             // if ruffSpotsInGooglePlaces.length is greater than 0, then you have a known ruff spot
             if (ruffSpotsInGooglePlaces.length > 0) {
@@ -91,10 +93,17 @@ module.exports = function (app) {
                 object.name = ruffPlace.name;
                 object.address = ruffPlace.vicinity;
                 object.photo = 'https://placehold.it/200x200';
-                object.date_added = ruffPlace.created_at;
-                object.rating = 5; // this needs to be fixed - average the ratings
-                object.reviews = ruffPlace.reviews;
+                object.date_added = ruffPlace.dataValues.createdAt;
+                // object.rating = ruffPlace.dataValues.reviews.friendly_rating; // this needs to be fixed - average the ratings
+                object.rating = ruffPlace.reviews.map(review => {
+                  return review.dataValues.friendly_rating;
+                });
+                object.reviews = ruffPlace.reviews.map(review => {
+                  return review.dataValues.review;
+                });
+
                 return object;
+
               });
 
               var testRuffSpots = [{
@@ -130,7 +139,7 @@ module.exports = function (app) {
               ];
 
               var obj = {};
-              obj.data = testRuffSpots;
+              obj.data = ruffSpots;
               obj.ruffSpots = true;
 
               res.send(obj);

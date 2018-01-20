@@ -33,8 +33,6 @@ $("#localSubmit").on("click", function (event) {
 
     var place = $("#typeOfPlace option:selected").val();
     var newPlace = place.split(" ").join("+");
-    console.log("THIS IS THE PLACE YOU ARE LOOKING FOR");
-    console.log(newPlace);
 
     // This request goes server side, where google places api is queried & results are returned.
     $.ajax({
@@ -42,8 +40,6 @@ $("#localSubmit").on("click", function (event) {
         url: `/api/places/${newPlace}/${latitude}/${longitude}`,
         success: function (response) {
             console.log(response);
-console.log("THIS IS THE URL YOU ARE LOOKING FOR");
-// console.log(url);
 
             /// store response in local storage, it will have data you need to build the 2 views
             localStorage.setItem('data', JSON.stringify(response.data));
