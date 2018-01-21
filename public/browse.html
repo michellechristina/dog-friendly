@@ -3,67 +3,140 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--Let browser know website is optimized for mobile-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--Import Google Icon Font-->
+    <title>Ruff Spots</title>
+    <!-- Material Icon CDN -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
+    <!-- Materialize CSS CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Your custom styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <!--  google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Special+Elite" rel="stylesheet">
+
+
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+
     <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Google Places API-->
-    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF3cJTRy-rvv-j_2VUSZJs22QjvRzVVcg"></script> -->
+
+    <!-- Materialize Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <title>Ruff Spot | Browse</title>
 </head>
 
 <body>
-    <nav class="brown lighten-2">
-        <div class="nav-wrapper">
-            <div class="container">
-                <a href="index.html" class="brand-logo">RUFF SPOTS</a>
-                <a href="#" data-activates="mobile-menu" class="button-collapse">
-                    <i class="material-icons">Ruff</i>
-                </a>
+    <header>
+        <nav class="brown lighten-2">
+            <div class="nav-wrapper">
+                <div class="container">
+                    <a href="index.html" class="brand-logo">RUFF SPOTS</a>
+                    <a href="#" data-activates="mobile-menu" class="button-collapse">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                            <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                               
+                                <li>
+                                    <a href="search.html">Search</a>
+                                </li>
+                                <li>
+                                    <a href="search.html">Submit</a>
+                                </li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-menu">
+                        <li>
+                            <div class="userView">
+                                <div class="background">
+                                    <img src="http://lorempixel.com/output/abstract-q-c-640-480-10.jpg" alt="Background Sidenav">
+                                </div>
+                                <a href="#!user">
+                                    <img class="circle" src="http://lorempixel.com/output/people-q-c-640-480-9.jpg" alt="User Image Sidenav">
+                                </a>
+                                <a href="#!name">
+                                    <span class="white-text name">John Doe</span>
+                                </a>
+                                <a href="#!email">
+                                    <span class="white-text email">jdandturk@gmail.com</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                       
+                        <li>
+                            <a href="search.html">Search</a>
+                        </li>
+                        <li>
+                            <a href="search.html">Submit</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
+    <main>
     <!--This page is now BROWSE - 4A/B -->
-    <div class="container">
+    <div class="row center-align searchIMG">
+        <div class="col s12"></div>
         <div class="row">
-            <div id="places">
-                <h2 id="search-results">Browse || Ruff Spots
-                    <span></span>
-                </h2>
-                <!--5 Results will be appended here-->
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="img/sample2.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Card Title
-                            <i class="material-icons right">more_vert</i>
-                        </span>
-                        <p>
-                            <a href="#">This is a link</a>
-                        </p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Card Title
-                            <i class="material-icons right">close</i>
-                        </span>
-                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                <div class="col s12 m8 offset-m2">
+                    <div class="col m9 s4">
+                        <div class="tagline">Local Ruff Spots</div>
+                        <!-- <h3 class="header center-align">Find Local Places To Bring Your Four Legged Friend.</h3> -->
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="container">
+            <div class="row">
+                <div id="places">
+                    <h2 id="search-results">Local Ruff Spots
+                        <span></span>
+                    </h2>
+                    <!--5 Results will be appended here-->
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="img/sample2.jpg">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Card Title
+                                <i class="material-icons right">more_vert</i>
+                            </span>
+                            <p>
+                                <a href="#">This is a link</a>
+                            </p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title
+                                <i class="material-icons right">close</i>
+                            </span>
+                            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </main>
+        <footer class="page-footer brown lighten-2">
+            <div class="container">
+                <p class="grey-text text-lighten-4"> © 2018 - Ruff Spots</p>
+                <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+            </div>
 
-    <div id="places"></div>
-    <script src="js/browse.js" type="text/javascript"></script>
+        </footer>
+        <div id="places"></div>
+        <script src="js/browse.js" type="text/javascript"></script>
 </body>
 
 </html>

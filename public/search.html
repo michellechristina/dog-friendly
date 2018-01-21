@@ -3,79 +3,133 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!--Let browser know website is optimized for mobile-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ruff Spots</title>
+    <!-- Material Icon CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Your custom styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <!--  google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Special+Elite" rel="stylesheet">
 
-     <!--Import Google Icon Font-->
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-     
-     <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-          
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF3cJTRy-rvv-j_2VUSZJs22QjvRzVVcg"></script>
+
+    <!-- Materialize Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <title>Ruff Spot | Search</title>
 </head>
 
 <body>
-        <nav>
-                <div class="nav-wrapper">
-                    <a href="" class="brand-logo">Ruff Spots</a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <header>
+        <nav class="brown lighten-2">
+            <div class="nav-wrapper">
+                <div class="container">
+                    <a href="index.html" class="brand-logo">RUFF SPOTS</a>
+                    <a href="#" data-activates="mobile-menu" class="button-collapse">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+
                         <li>
                             <a href="search.html">Search</a>
                         </li>
                         <li>
-                            <a href="browse.html">Near Me
-                                <!-- <span class="new badge">4</span> -->
-                            </a>
+                            <a href="search.html">Submit</a>
+                        </li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-menu">
+                        <li>
+                            <div class="userView">
+                                <div class="background">
+                                    <img src="http://lorempixel.com/output/abstract-q-c-640-480-10.jpg" alt="Background Sidenav">
+                                </div>
+                                <a href="#!user">
+                                    <img class="circle" src="http://lorempixel.com/output/people-q-c-640-480-9.jpg" alt="User Image Sidenav">
+                                </a>
+                                <a href="#!name">
+                                    <span class="white-text name">John Doe</span>
+                                </a>
+                                <a href="#!email">
+                                    <span class="white-text email">jdandturk@gmail.com</span>
+                                </a>
+                            </div>
                         </li>
                         <li>
-                            <a href="search.html">Add</a>
+                            <a href="index.html">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="search.html">Search</a>
                         </li>
                         <li>
-        
-                            </a>
+                            <a href="search.html">Submit</a>
                         </li>
                     </ul>
                 </div>
-            </nav>
+            </div>
+        </nav>
+    </header>
+    <main>
 
-    <form id="searchForm">
-       
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="input-zipCode" placeholder="zipcode" value="" type="number" max="5" class="validate">
-                        <br>
-                        <label for="zipCode"></label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="input-place" placeholder="Place" value="" type="text" class="validate">
-                        <br>
-                        <label for="place"></label>
+        <!-- Your content here -->
+        <div class="row center-align searchIMG">
+            <div class="col s12"></div>
+            <!-- <h2 class="logo center-align">RUFF SPOTS</h2> -->
+
+
+            <div class="row">
+                <div class="col s12 m8 offset-m2">
+                    <div class="col m9 s4">
+                        <div class="tagline">Seach For A Spot</div>
+                        <!-- <h3 class="header center-align">Find Local Places To Bring Your Four Legged Friend.</h3> -->
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="container center-align">
 
-              
-                <button class="btn waves-effect waves-light" name ="action" id="btn-place" type="submit" value="Submit">Submit!
-                    <i class="material-icons right">send</i>
-                  </button>
-            </form>
+            <form id="searchForm">
 
-             <!-- <label>Where?
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="input-zipCode" placeholder="zipcode" value="" type="number" max="5" class="validate">
+                                <br>
+                                <label for="zipCode"></label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="input-place" placeholder="Place" value="" type="text" class="validate">
+                                <br>
+                                <label for="place"></label>
+                            </div>
+                        </div>
+
+
+                        <button class="btn waves-effect waves-light" name="action" id="btn-place" type="submit" value="Submit">Search!
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+
+                </div>
+
+                <!-- <label>Where?
                 <input id="input-zipCode" placeholder="your zip code" value="">
             </label>
 
@@ -84,9 +138,16 @@
                 <input id="input-place" placeholder="add your place" value="">
             </label> -->
 
-            <!-- <button id="btn-place" type="submit" value="Submit">Submit!</button> -->
+                <!-- <button id="btn-place" type="submit" value="Submit">Submit!</button> -->
+        </div>
+    </main>
+    <footer class="page-footer brown lighten-2">
+        <div class="container">
+            <p class="grey-text text-lighten-4"> © 2018 - Ruff Spots</p>
+            <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+        </div>
 
-
+    </footer>
 </body>
 <script src="js/search.js" type="text/javascript"></script>
 
