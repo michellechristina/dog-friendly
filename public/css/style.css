@@ -13,12 +13,29 @@
     }
 
     .headIMG {
-        background: url(../img/dogheader1.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        opacity: .8;
-        height:450px;
+        /* background: url(../img/dogheader1.jpg); */
+        /* background-repeat: no-repeat; */
+        /* background-size: cover; */
+        /* width: 100%; */
+        /* opacity: .8; */
+        /* height:450px; */
       }
+
+      .parallax img {
+        width: 100%;
+        /* object-position: 100%, 0; */
+        /* @media {$small-and-down} { max-width: 200%; }
+        @media {$medium-and-up} { width: 100%; } */
+    }
+    .parallax-container {
+        height: 500px;
+        opacity: .8;
+      }
+
+      .dropdown-content .select-dropdown{
+        color: #9f7369;
+      }
+
 
       .searchIMG {
         background: url(../img/dogheader1.jpg);
@@ -29,6 +46,10 @@
       }
 
     h2 {
+        font-family: 'Special Elite', cursive;
+    }
+
+    .card-title {
         font-family: 'Special Elite', cursive;
     }
 
@@ -50,19 +71,35 @@
 
     }
 
-    .btn {
+ 
+    .btn{
         background-color: #9f7369;
-        
-    }
-
-
-    .btn:hover {
+      }
+      /* .btn:visited{
+        background-color:#C06E52;
+      } */
+      .btn:hover {
         background-color: #d2bba0;
-    }
+      }
+      /* .btn:active{
+        background-color: #C06E52;
+      } */
+
+      .btn:focus{ 
+        background-color: #C06E52;
+      }
+
+      /* .input {
+          float: left;
+      } */
 
   /* INPUT FIELD ON INDEX NEAR ME */
   .nearsearch {
       /* border: 1px solid #9f7369; */
   }
 
-       
+
+/* changes color of select dropdown text - category dropdowns */
+  ul.dropdown-content.select-dropdown li span {
+    color:#9f7369; /* no need for !important :) */
+}

@@ -17,7 +17,7 @@ for (var i = 0; i < googlePlaces.length; i++) {
 
     //Create the div for the card
     var resultDiv = $('<div>');
-    resultDiv.addClass('col-med-4');
+    resultDiv.addClass('col med 4');
     resultDiv.addClass('center-align')
     resultDiv.addClass('place')
     console.log(googlePlaces[i].place_id)
@@ -25,7 +25,7 @@ for (var i = 0; i < googlePlaces.length; i++) {
 
     //create the actual card
     var resultCard = $('<div>');
-    resultCard.addClass('card');
+    resultCard.addClass('card small brown lighten-4');
     resultCard.addClass('hoverable');
     //append the card to the column div
     resultDiv.append(resultCard);
