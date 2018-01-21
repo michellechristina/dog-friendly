@@ -6,6 +6,7 @@ console.log(googlePlaces);
 $(document).ready(function () {
     // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
     $('#addPlace').modal();
+    $('select').material_select();
 });
 
 
@@ -19,6 +20,8 @@ for (var i = 0; i < googlePlaces.length; i++) {
     resultDiv.addClass('col-med-4');
     resultDiv.addClass('center-align')
     resultDiv.addClass('place')
+    console.log(googlePlaces[i].place_id)
+    resultDiv.attr('place_id', googlePlaces[i].place_id);
 
     //create the actual card
     var resultCard = $('<div>');
@@ -53,12 +56,30 @@ $(".place").on("click", function (event) {
     var location = $(this).children().children()[1];
     location = location.innerHTML;
     console.log(location);
-    // declare variables for title and body
-    // replace the modal title and body with those attributes
-    // then open the modal
+    //Inject data into the modal
     $('#title').html(title);
     $('#location').html(location);
     $('#addPlace').modal('open');
+    $('#newPlace').attr('data',$(this).attr("place_id"));
+})
+
+$('#newPlace').on('click', function (event){
+    event.preventDefault();
+    console.log($('#title').html())
+    var place = {};
+    console.log($(this));
+    place.place_id = $(this).attr("data")
+    //need to capture a category from the modal
+    place.location = $('#location').html();
+    console.log(place);
+
+    $.ajax({
+        method: "get",
+        url: `/api/places/`,
+        success: function (response) {
+            console.log(response);
+        }
+    })
 })
 
 

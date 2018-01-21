@@ -25,9 +25,6 @@
         <div class="nav-wrapper">
             <div class="container">
                 <a href="index.html" class="brand-logo">RUFF SPOTS</a>
-                <a href="#" data-activates="mobile-menu" class="button-collapse">
-                    <i class="material-icons">Ruff</i>
-                </a>
             </div>
         </div>
     </nav>
@@ -42,20 +39,29 @@
         </div>
     </div>
 
-
-    <!-- Modal Trigger -->
-    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#addPlace">Modal</a> -->
-
     <!-- Modal Structure -->
     <div id="addPlace" class="modal modal-fixed-footer">
         <div class="modal-content">
-            <h4 id="title" class ="center-align"></h4>
+            <h4 id="title" class="center-align"></h4>
             <p id="location" class="center-align"></p>
             <br>
-            <p class="center-align">If you know this location to be a ruff spot, you can add it using the add button below</p>
+            <p class="center-align">Select a category to add this ruff spot</p>
+            <form class= "col s8">
+                <div class="input-field">
+                    <select>
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="park" data-icon="img/sample1.jpg" class="circle">Parks</option>
+                        <option value="food" data-icon="img/sample2.jpg" class="circle">Restaurants</option>
+                        <option value="natural feature" data-icon="img/sample1.jpg" class="circle">Hiking</option>
+                        <option value="cafe" data-icon="img/sample2.jpg" class="circle">Cafes</option>
+                        <option value="store" data-icon="img/sample1.jpg" class="circle">Shopping</option>
+                        <option value="bar" data-icon="img/sample2.jpg" class="circle">Bars</option>
+                    </select>
+                </div>
+            </form>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+            <a href="#!" id="newPlace" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
         </div>
     </div>
 
