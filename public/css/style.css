@@ -20,6 +20,14 @@
         height:450px;
       }
 
+      .searchIMG {
+        background: url(../img/dogheader1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: .8;
+        height:200px;
+      }
+
     h2 {
         font-family: 'Special Elite', cursive;
     }
