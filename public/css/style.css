@@ -1,0 +1,68 @@
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      font-family: 'Roboto', sans-serif;
+    }
+
+
+    main {
+      flex: 1 0 auto;
+      
+    }
+
+    .headIMG {
+        background: url(../img/dogheader1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: .8;
+        height:450px;
+      }
+
+      .searchIMG {
+        background: url(../img/dogheader1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: .8;
+        height:200px;
+      }
+
+    h2 {
+        font-family: 'Special Elite', cursive;
+    }
+
+    h3 {
+        /* font-family: 'Roboto', sans-serif; */
+        font-family: 'Special Elite', cursive;
+        font-size: 1.92rem;
+        color: #9f7369;
+       
+
+    }
+
+    .tagline {
+        /* font-family: 'Roboto', sans-serif; */
+        font-family: 'Special Elite', cursive;
+        font-size: 3.92rem;
+        /* color: #ffffff; */
+        padding-top: 10%;
+
+    }
+
+    .btn {
+        background-color: #9f7369;
+        
+    }
+
+
+    .btn:hover {
+        background-color: #d2bba0;
+    }
+
+  /* INPUT FIELD ON INDEX NEAR ME */
+  .nearsearch {
+      /* border: 1px solid #9f7369; */
+  }
+
+       
