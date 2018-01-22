@@ -1,68 +1,116 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
 
-    body {
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-      font-family: 'Roboto', sans-serif;
-    }
+main {
+    flex: 1 0 auto;
+}
 
 
-    main {
-      flex: 1 0 auto;
-      
-    }
-
-    .headIMG {
-        background: url(../img/dogheader1.jpg);
-        background-repeat: no-repeat;
+/* .headIMG {
+        background: url(../img/dogheader1.jpg); 
+        background-repeat: no-repeat; 
         background-size: cover;
+        width: 100%;
         opacity: .8;
         height:450px;
-      }
+      } */
 
-      .searchIMG {
-        background: url(../img/dogheader1.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        opacity: .8;
-        height:200px;
-      }
+.parallax img {
+    width: 100%;
+    /* object-position: 100%, 0; */
+    /* @media {$small-and-down} { max-width: 200%; }
+        @media {$medium-and-up} { width: 100%; } */
+}
 
-    h2 {
-        font-family: 'Special Elite', cursive;
-    }
+.parallax-container {
+    height: 500px;
+    opacity: .8;
+}
 
-    h3 {
-        /* font-family: 'Roboto', sans-serif; */
-        font-family: 'Special Elite', cursive;
-        font-size: 1.92rem;
-        color: #9f7369;
-       
+.dropdown-content .select-dropdown {
+    color: #9f7369;
+}
 
-    }
+.searchIMG {
+    background: url(../img/dogheader1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .8;
+    height: 350px;
+}
 
-    .tagline {
-        /* font-family: 'Roboto', sans-serif; */
-        font-family: 'Special Elite', cursive;
-        font-size: 3.92rem;
-        /* color: #ffffff; */
-        padding-top: 10%;
+h2 {
+    font-family: 'Special Elite', cursive;
+}
 
-    }
+.card .card-title {
+    font-family: 'Special Elite', cursive;
+    padding-top: 35px;
+    font-size: 3rem;
+    opacity: .8;
+}
 
-    .btn {
-        background-color: #9f7369;
-        
-    }
+.card .card-content,
+.modalStyle {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    padding-top: 5px;
+    font-size: 1rem;
+    letter-spacing: 5px;
+    opacity: .8;
+}
+
+h3 {
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Special Elite', cursive;
+    font-size: 1.92rem;
+    color: #9f7369;
+}
+
+.tagline {
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Special Elite', cursive;
+    font-size: 3.92rem;
+    /* color: #ffffff; */
+    padding-top: 10%;
+}
+
+.btn {
+    background-color: #9f7369;
+}
 
 
-    .btn:hover {
-        background-color: #d2bba0;
-    }
+/* .btn:visited{
+        background-color:#C06E52;
+      } */
 
-  /* INPUT FIELD ON INDEX NEAR ME */
+.btn:hover {
+    background-color: #d2bba0;
+}
+
+
+/* .btn:active{
+        background-color: #C06E52;
+      } */
+
+.btn:focus {
+    background-color: #C06E52;
+}
+
+
+/* INPUT FIELD ON INDEX NEAR ME
   .nearsearch {
-      /* border: 1px solid #9f7369; */
-  }
+      border: 1px solid #9f7369;
+  } */
 
-       
+
+/* changes color of select dropdown text - category dropdowns */
+
+ul.dropdown-content.select-dropdown li span {
+    color: #9f7369;
+    /* no need for !important :) */
+}

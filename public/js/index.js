@@ -1,5 +1,7 @@
 $(document).ready(function() {
 $('select').material_select();
+$(".button-collapse").sideNav();
+$('.parallax').parallax();
  });
 
 // bringing variables back into scope so the onclick event can access them
