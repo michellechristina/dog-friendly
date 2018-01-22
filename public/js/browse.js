@@ -44,32 +44,7 @@ for (var i = 0; i < ruffSpots.length; i++) {
     //Add location to the card
     resultCard.append(address);
 
-    // XXXXvar resultCard = $('<div>');
-    // resultCard.addClass('card');
-    // resultCard.addClass('hoverable');
-    //append the card to the column div
-    // resultDiv.append(resultCard);
-
-    //Add the div containing the card to the DOM
-    // places.append(resultDiv);
-
     
-    //create a card title
-    // var cardTitle = $('<div>');
-    // cardTitle.addClass('card-title');
-    // cardTitle.html(ruffSpots[i].name);
-    // //append the card title to the card
-    // resultCard.append(cardTitle);
-
-    // //Create the location
-    // var address = $('<div>');
-    // address.addClass('card-content');
-    // address.html(ruffSpots[i].address);
-    // //Add location to the card
-    // resultCard.append(address);
-
-
-
     //Adds the Add a Ruff Spot button to the card
     var reviewSpot = $('<a class="waves-effect waves-light btn modal-trigger align-right" href="#modal2">Review A Ruff Spot</a>');
     reviewSpot.addClass('revRuff');
@@ -79,8 +54,7 @@ for (var i = 0; i < ruffSpots.length; i++) {
     //Add the div containing the card to the DOM
     places.append(resultDiv);
 
-    
-    };
+};
 
 
     $(".place").on("click", function (event) {
@@ -96,22 +70,22 @@ for (var i = 0; i < ruffSpots.length; i++) {
         $('#title').html(title);
         $('#location').html(location);
         $('#addPlace').modal('open');
-        $('#newPlace').attr('data',$(this).attr("place_id"));
+        $('#newReview').attr('data',$(this).attr("friendly_rating"));
     })
     
-    $('#newPlace').on('click', function (event){
+    $('#newReview').on('click', function (event){
         event.preventDefault();
-        console.log($('#title').html())
-        var place = {};
+        console.log($('.select-dropdown').html())
+        var review = {};
         console.log($(this));
-        place.place_id = $(this).attr("data")
+        review.friendly_rating = $(this).attr("data")
         //need to capture a category from the modal
-        place.location = $('#location').html();
-        console.log(place);
+        review.review = $('#textarea1').html();
+        console.log(reviews);
     
         $.ajax({
-            method: "get",
-            url: `/api/places/`,
+            method: "post",
+            url: `/api/reviews/`,
             success: function (response) {
                 console.log(response);
             }
