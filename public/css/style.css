@@ -32,7 +32,7 @@ main {
 }
 
 .dropdown-content .select-dropdown {
-    color: #9f7369;
+    color: #706C61;
 }
 
 .searchIMG {
@@ -80,7 +80,7 @@ h3 {
 }
 
 .btn {
-    background-color: #9f7369;
+    background-color: #BA724C;
 }
 
 
@@ -98,7 +98,7 @@ h3 {
       } */
 
 .btn:focus {
-    background-color: #C06E52;
+    background-color: #BA724C;
 }
 
 
@@ -111,6 +111,60 @@ h3 {
 /* changes color of select dropdown text - category dropdowns */
 
 ul.dropdown-content.select-dropdown li span {
-    color: #9f7369;
+    color: #706C61;
     /* no need for !important :) */
 }
+
+/* Custom CSS */
+/* 
+#706C61 - brown
+#899E8B - gray-green
+#99C5B5 - teal
+#BA724C - orange
+#F7C23B - yellow
+*/
+
+
+.nav-wrapper {
+    background-color: #706C61;
+}
+
+.page-footer {
+    background-color: #706C61;
+}
+
+i.material-icons {
+    color: #F7C23B ;
+}
+
+h3 {
+    color: #BA724C;
+}
+
+h3#title{
+    color: #BA724C;
+}
+
+#input-zipCode {
+    color: #99C5B5;
+}
+
+#input-place {
+    color: #99C5B5;
+}
+
+.card-title {
+    background-color: #99C5B5;
+}
+.card-content {
+    background-color: #899E8B;
+}
+
+div.modal-content {
+    background-color: #F7C23B;
+}
+
+div.modal-footer {
+    background-color: #99C5B5;
+}
+
