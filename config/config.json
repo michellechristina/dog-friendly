@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "database_development",
+    "password": "password!",
+    "database": "dog_friendly",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
@@ -16,8 +16,9 @@
   "production": {
     "username": "root",
     "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "database": "dog_friendly",
+    "host": "cig4l2op6r0fxymw.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "postgres",
+    "port": "3306"
   }
 }
