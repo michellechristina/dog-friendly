@@ -31,7 +31,7 @@ module.exports = function (app) {
   app.put("/api/reviews/:review/:friendly_rating", function (req, res) {
     //Add the new review to the review DB
     db.reviews.create({
-      place_id: req.params.placeID,
+      // place_id: req.params.placeID,
       review: req.params.review,
       friendly_rating: req.params.friendly_rating,
     }).then(function (newReview) {
