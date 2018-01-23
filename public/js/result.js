@@ -66,6 +66,7 @@ $('#newPlace').on('click', function (event){
         method: "put",
         url: `/api/places/${place.place_id}/${place.category}`,
         success: function (response) {
+            
             console.log(response);
         }
     })

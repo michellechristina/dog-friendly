@@ -105,12 +105,13 @@ review.append(reviews);
         // console.log($(this));
         review.friendly_rating = $('#rating option:selected').val();
         review.review = $('#textarea1').val();
+        review.place_id=ruffSpots[0].place_id; // pass in the google places id here
         console.log(review);
     
         $.ajax({
-            method: "put",
+            method: "post",
             url: `/api/reviews/`,
-            data: review.friendly_rating,  //this is where you pass data to the backend 
+            data: review,  //this is where you pass data to the backend 
             success: function (response) {
                 
                 console.log(response);

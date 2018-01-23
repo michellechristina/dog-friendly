@@ -28,17 +28,33 @@ module.exports = function (app) {
     })
   })
 
-  app.put("/api/reviews/:review/:friendly_rating", function (req, res) {
-    //Add the new review to the review DB
-    db.reviews.create({
-      // place_id: req.params.placeID,
-      review: req.params.review,
-      friendly_rating: req.params.friendly_rating,
-    }).then(function (newReview) {
-      res.json(newReview);
-    })
-  })
-  
+  //Add the new review to the review DB
+  app.post("/api/reviews", function (req, res) {
+
+    // look up the place id from the places table
+    db.places.findOne({
+      where: {
+        place_id: req.body.place_id
+      }
+      // this is the promise, after the query above happens, pass in that data to the create below
+    }).then(function (dbPlace) {
+      // console.log(dbPlace);
+
+      // create the record in the review table
+      db.reviews.create({
+        // this links the place table (id) to the review (placeid)
+        placeId: dbPlace.dataValues.id,
+        review: req.body.review,
+        friendly_rating: req.body.friendly_rating,
+      }).then(function (newReview) {
+        res.json(newReview);
+      });
+
+    });
+
+
+  });
+
 
 
   //GET all places with the passed in params
