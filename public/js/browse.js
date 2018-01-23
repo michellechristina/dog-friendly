@@ -69,25 +69,24 @@ for (var i = 0; i < ruffSpots.length; i++) {
         //Inject data into the modal
         $('#title').html(title);
         $('#location').html(location);
-        $('#addPlace').modal('open');
+        // $('#addPlace').modal('open');
         $('#newReview').attr('data',$(this).attr("friendly_rating"));
     })
     
     $('#newReview').on('click', function (event){
         event.preventDefault();
-        console.log($('.select-dropdown').html())
+        // console.log($('.select-dropdown').html())
         var review = {};
-        console.log($(this));
-        review.friendly_rating = $('#rating option:selected').text();
+        // review.place_id = $(this).attr("data")
+        // console.log($(this));
+        review.friendly_rating = $('#rating option:selected').val();
         review.review = $('#textarea1').val();
-        //need to capture a category from the modal
-        review.review = $('#textarea1').html();
         console.log(review);
     
         $.ajax({
-            method: "post",
-            url: `/api/reviews/`,
-            data: review,  //this is where you pass data to the backend
+            method: "put",
+            url: `/api/reviews/${review.friendly_rating}/${review.review}`,
+            // data: review,  //this is where you pass data to the backend ${review.place_id}/
             success: function (response) {
                 console.log(response);
             }
