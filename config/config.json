@@ -14,11 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "dog_friendly",
-    "host": "cig4l2op6r0fxymw.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "postgres",
-    "port": "3306"
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
   }
 }
