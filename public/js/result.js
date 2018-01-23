@@ -67,8 +67,12 @@ $('#newPlace').on('click', function (event){
         method: "put",
         url: `/api/places/${place.place_id}/${place.category}`,
         success: function (response) {
+            // when success, open modal & redirect to index after 2 seconds
             $('#redirectModal').modal('open');
             console.log(response);
+            setTimeout(() => {
+                window.location="/index.html";
+            }, 2000);
         }
     })
 })
