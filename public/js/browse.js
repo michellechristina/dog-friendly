@@ -78,14 +78,16 @@ for (var i = 0; i < ruffSpots.length; i++) {
         console.log($('.select-dropdown').html())
         var review = {};
         console.log($(this));
-        review.friendly_rating = $(this).attr("data")
+        review.friendly_rating = $('#rating option:selected').text();
+        review.review = $('#textarea1').val();
         //need to capture a category from the modal
         review.review = $('#textarea1').html();
-        console.log(reviews);
+        console.log(review);
     
         $.ajax({
             method: "post",
             url: `/api/reviews/`,
+            data: review,  //this is where you pass data to the backend
             success: function (response) {
                 console.log(response);
             }
