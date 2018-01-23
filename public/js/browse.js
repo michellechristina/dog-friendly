@@ -43,6 +43,30 @@ for (var i = 0; i < ruffSpots.length; i++) {
     address.html(ruffSpots[i].address);
     //Add location to the card
     resultCard.append(address);
+    //Create the rating
+    // var rating = $('<div>');
+    // address.addClass('card-content');
+    // address.html(ruffSpots[i].rating);
+    // resultCard.append(rating);
+    //  //Create the rating
+    //  var review = $('<div>');
+    //  address.addClass('card-content');
+    //  address.html(ruffSpots[i].reviews);
+    //  resultCard.append(review);
+    var review = $('<div>');
+    review.addClass('card-content');
+    // review.append("10 main street rochester nh");
+    // review.append("rating: 5");
+    // review.append("This is a review test test test");
+
+    var reviews = '';
+    for (let b = 0; b < ruffSpots[i].reviews.length; b++) {
+  reviews += `<div> ${ruffSpots[i].rating[b]} - ${ruffSpots[i].reviews[b]} </div>`;
+}
+review.append(reviews);
+
+    //Add location to the card
+    resultCard.append(review);
 
     
     //Adds the Add a Ruff Spot button to the card
@@ -89,6 +113,7 @@ for (var i = 0; i < ruffSpots.length; i++) {
             url: `/api/reviews/`,
             data: review,  //this is where you pass data to the backend
             success: function (response) {
+                
                 console.log(response);
             }
         })
