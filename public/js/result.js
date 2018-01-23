@@ -3,6 +3,7 @@ var googlePlaces = JSON.parse(localStorage.getItem('data'));
 
 $(document).ready(function () {
     $('#addPlace').modal();
+    $('#redirectModal').modal();
     $('select').material_select();
 });
 
@@ -66,7 +67,7 @@ $('#newPlace').on('click', function (event){
         method: "put",
         url: `/api/places/${place.place_id}/${place.category}`,
         success: function (response) {
-            
+            $('#redirectModal').modal('open');
             console.log(response);
         }
     })
