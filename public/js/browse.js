@@ -85,11 +85,12 @@ for (var i = 0; i < ruffSpots.length; i++) {
     
         $.ajax({
             method: "put",
-            url: `/api/reviews/${review.friendly_rating}/${review.review}`,
-            // data: review,  //this is where you pass data to the backend ${review.place_id}/
+            url: `/api/reviews/`,
+            data: review.friendly_rating,  //this is where you pass data to the backend 
             success: function (response) {
                 console.log(response);
             }
         })
     })
     
+    //${review.friendly_rating}/${review.review}`,
