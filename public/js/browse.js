@@ -9,6 +9,7 @@ $(document).ready(function () {
     $('#modal2').modal();
     $('select').material_select();
     $(".button-collapse").sideNav();
+    $('#successModal').modal();
 });
 
 
@@ -113,8 +114,13 @@ review.append(reviews);
             url: `/api/reviews/`,
             data: review,  //this is where you pass data to the backend 
             success: function (response) {
-                
-                console.log(response);
+                 console.log(response);
+                   // when success, open modal & redirect to index after 2 seconds
+            $('#successModal').modal('open');
+            console.log(response);
+            setTimeout(() => {
+                location.reload();
+            }, 2000);
             }
         })
     })
