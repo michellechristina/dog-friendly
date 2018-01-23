@@ -18,6 +18,17 @@ module.exports = function (app) {
     })
   });
 
+  app.put("/api/places/:placeID/:category", function (req, res) {
+    //Add the new place to the Places DB
+    db.places.create({
+      place_id: req.params.placeID,
+      category: req.params.category
+    }).then(function (newPlace) {
+      res.json(newPlace);
+    })
+  })
+
+
 
   //GET all places with the passed in params
   app.get("/api/places/:newPlace/:latitude/:longitude", function (req, res) {
