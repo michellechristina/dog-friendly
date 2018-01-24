@@ -146,7 +146,7 @@ module.exports = function (app) {
               });
 
               // this limits the result to 5 :-)
-              googleSpotsNoKnownRuffSpots.length = 5;
+              // googleSpotsNoKnownRuffSpots.length = 5;
 
               // there are no ruff spots, stuff them into a variable & send them back to frontend
               // this should probably be reformated. it's a bit confusing, but
