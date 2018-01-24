@@ -94,10 +94,9 @@
                 <p id="location" class="center-align"></p>
                 <br>
                 <p class="center-align">Select a category to add this ruff spot</p>
-
                 <form class="col s8">
                     <div class="input-field brown-text brown-darken-2">
-                        <select class="icons nearsearch">
+                        <select class="icons nearsearch" id= "category">
                             <option value="park" data-icon="img/park.png" class="circle">Parks</option>
                             <option value="food" data-icon="img/restaurant.png" class="circle">Restaurants</option>
                             <option value="natural feature" data-icon="img/hiking.png" class="circle">Hiking</option>
@@ -107,15 +106,23 @@
                         </select>
                     </div>
                 </form>
-
-
-
-
             </div>
             <div class="modal-footer">
                 <a href="#!" id="newPlace" class="modal-action modal-close waves-effect btn">Add A Ruff Spot</a>
             </div>
         </div>
+
+
+ <!-- Modal Structure For REDIRECT-->
+ <div id="redirectModal" class="modal modal-fixed-footer modalStyle">
+    <div class="modal-content">
+        <h3 class="center-align">Thanks for Submitting Your Spot!</h3>
+    </div>
+</div>
+
+
+
+
 
     </main>
     <footer class="page-footer">

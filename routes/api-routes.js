@@ -18,6 +18,44 @@ module.exports = function (app) {
     })
   });
 
+  app.put("/api/places/:placeID/:category", function (req, res) {
+    //Add the new place to the Places DB
+    db.places.create({
+      place_id: req.params.placeID,
+      category: req.params.category
+    }).then(function (newPlace) {
+      res.json(newPlace);
+    })
+  })
+
+  //Add the new review to the review DB
+  app.post("/api/reviews", function (req, res) {
+
+    // look up the place id from the places table
+    db.places.findOne({
+      where: {
+        place_id: req.body.place_id
+      }
+      // this is the promise, after the query above happens, pass in that data to the create below
+    }).then(function (dbPlace) {
+      // console.log(dbPlace);
+
+      // create the record in the review table
+      db.reviews.create({
+        // this links the place table (id) to the review (placeid)
+        placeId: dbPlace.dataValues.id,
+        review: req.body.review,
+        friendly_rating: req.body.friendly_rating,
+      }).then(function (newReview) {
+        res.json(newReview);
+      });
+
+    });
+
+
+  });
+
+
 
   //GET all places with the passed in params
   app.get("/api/places/:newPlace/:latitude/:longitude", function (req, res) {
