@@ -20,7 +20,7 @@ for (var i = 0; i < ruffSpots.length; i++) {
 
     //Create the div for the card
     var resultDiv = $('<div>');
-    resultDiv.addClass('col med 12');
+    // resultDiv.addClass('col med 12');
     resultDiv.addClass('center-align')
     resultDiv.addClass('place')
     console.log(ruffSpots[i].place_id)
