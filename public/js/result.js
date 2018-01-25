@@ -19,19 +19,19 @@ for (var i = 0; i < googlePlaces.length; i++) {
     resultDiv.attr('place_id', googlePlaces[i].place_id);
     //create the actual card
     var resultCard = $('<div>');
-    resultCard.addClass('card');
+    resultCard.addClass('card teal lighten-4');
     resultCard.addClass('hoverable');
     //append the card to the column div
     resultDiv.append(resultCard);
     //create a card title
     var cardTitle = $('<div>');
-    cardTitle.addClass('card-title');
+    cardTitle.addClass('card-title teal lighten-3 lime-text text-darken-4');
     cardTitle.html(googlePlaces[i].name);
     //append the card title to the card
     resultCard.append(cardTitle);
     //Create the location
     var address = $('<div>');
-    address.addClass('card-content');
+    address.addClass('card-content teal lighten-2');
     address.html(googlePlaces[i].address);
     //Add location to the card
     resultCard.append(address);

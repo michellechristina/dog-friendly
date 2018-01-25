@@ -28,19 +28,19 @@ for (var i = 0; i < ruffSpots.length; i++) {
 
     //create the actual card
     var resultCard = $('<div>');
-    resultCard.addClass('card lime lighten-3');
+    resultCard.addClass('card teal lighten-4');
     resultCard.addClass('hoverable');
     //append the card to the column div
     resultDiv.append(resultCard);
     //create a card title
     var cardTitle = $('<div>');
-    cardTitle.addClass('card-title');
+    cardTitle.addClass('card-title teal lighten-3');
     cardTitle.html(ruffSpots[i].name);
     //append the card title to the card
     resultCard.append(cardTitle);
     //Create the location
     var address = $('<div>');
-    address.addClass('card-content');
+    address.addClass('card-content teal lighten-2');
     address.html(ruffSpots[i].address);
     //Add location to the card
     resultCard.append(address);
@@ -71,7 +71,7 @@ review.append(reviews);
 
     
     //Adds the Add a Ruff Spot button to the card
-    var reviewSpot = $('<a class="waves-effect waves-light btn modal-trigger align-right" href="#modal2">Review A Ruff Spot</a>');
+    var reviewSpot = $('<a class="waves-effect waves-light btn modal-trigger align-right yellow darken-4" href="#modal2">Review A Ruff Spot</a>');
     reviewSpot.addClass('revRuff');
 
     resultCard.append(reviewSpot);

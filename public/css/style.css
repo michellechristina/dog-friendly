@@ -125,17 +125,17 @@ ul.dropdown-content.select-dropdown li span {
 */
 
 
-.nav-wrapper {
+/* .nav-wrapper {
     background-color: #706C61;
-}
+} */
 
-.page-footer {
+/* .page-footer {
     background-color: #706C61;
-}
+} */
 
-i.material-icons {
+/* i.material-icons {
     color: #F7C23B ;
-}
+} */
 
 h3 {
     color: #BA724C;
@@ -153,25 +153,15 @@ h3#title{
     color: #99C5B5;
 }
 
-#textarea1 {
-    color: #706C61;
-}
-
-.card-title {
+/* .card-title {
     background-color: #99C5B5;
-}
-.card-content {
+} */
+/* .card-content {
     background-color: #899E8B;
-}
+} */
 
-div.modal-content {
+/* div.modal-content {
     background-color: #F7C23B;
-}
+} */
 
-div.modal-footer {
-    background-color: #99C5B5;
-}
 
-div.lime {
-    background-color: #F7C23B;
-}

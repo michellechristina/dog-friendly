@@ -19,27 +19,27 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-    <title>Ruff Spots | Search Results</title>
+    <title>Ruff Spot | Results</title>
 </head>
 
 <body>
-
     <header>
-        <nav class="brown lighten-2">
+        <nav class="lime darken-4">
             <div class="nav-wrapper">
                 <div class="container">
-                    <a href="index.html" class="brand-logo"><img src="img/ruffspots-ora.png" width= 175px></a>                    <a href="#" data-activates="mobile-menu" class="button-collapse">
+                    <a href="index.html" class="brand-logo"><img src="img/ruffspots-ora.png" width=175px></a>
+                    <a href="#" data-activates="mobile-menu" class="button-collapse">
                         <i class="material-icons">menu</i>
                     </a>
                     <ul class="right hide-on-med-and-down">
                         <li>
-                            <a href="index.html">HOME</a>
+                            <a href="index.html">Home</a>
                         </li>
                         <li>
-                            <a href="search.html">SEARCH</a>
+                            <a href="search.html">Sniff</a>
                         </li>
                         <li>
-                            <a href="submit.html">SUBMIT</a>
+                            <a href="submit.html">Mark</a>
                         </li>
                     </ul>
                     <ul class="side-nav" id="mobile-menu">
@@ -51,13 +51,13 @@
                             </div>
                         </li>
                         <li>
-                            <a href="index.html">HOME</a>
+                            <a href="index.html">Home</a>
                         </li>
                         <li>
-                            <a href="search.html">SEARCH</a>
+                            <a href="search.html">Sniff</a>
                         </li>
                         <li>
-                            <a href="submit.html">SUBMIT</a>
+                            <a href="submit.html">Mark</a>
                         </li>
                     </ul>
                 </div>
@@ -71,7 +71,7 @@
             <div class="row">
                 <div class="col s12 m6 offset-m2">
 
-                    <div class="tagline">Add A Spot!</div>
+                    <div class="tagline">Mark A Spot!</div>
                 </div>
             </div>
         </div>
@@ -80,8 +80,8 @@
 
             <!-- <div class="row"> -->
             <div id="places">
-                <h3 id="search-results">No Ruff Spots have been found, but these places might be Ruff Friendly.</h3>
-                <h3>Select a Location to add it as a Ruff Spot!</h3>
+                <h3 id="search-results">No Ruff Spots have been marked but these places might be worth a Sniff.</h3>
+                <h3>Click to add a Ruff Spot!</h3>
                 <!--5 Results will be appended here-->
             </div>
         </div>
@@ -89,14 +89,14 @@
 
         <!-- Modal Structure -->
         <div id="addPlace" class="modal modal-fixed-footer modalStyle">
-            <div class="modal-content">
+            <div class="modal-content teal lighten-3 lime-text text-darken-4">
                 <h3 id="title" class="center-align"></h3>
                 <p id="location" class="center-align"></p>
                 <br>
                 <p class="center-align">Select a category to add this ruff spot</p>
                 <form class="col s8">
                     <div class="input-field brown-text brown-darken-2">
-                        <select class="icons nearsearch" id= "category">
+                        <select class="icons nearsearch" id="category">
                             <option value="park" data-icon="img/park.png" class="circle">Parks</option>
                             <option value="food" data-icon="img/restaurant.png" class="circle">Restaurants</option>
                             <option value="natural feature" data-icon="img/hiking.png" class="circle">Hiking</option>
@@ -108,24 +108,24 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <a href="#!" id="newPlace" class="modal-action modal-close waves-effect btn">Add A Ruff Spot</a>
+                <a href="#!" id="newPlace" class="modal-action modal-close waves-effect btn yellow darken-4">Add A Ruff Spot</a>
             </div>
         </div>
 
 
- <!-- Modal Structure For REDIRECT-->
- <div id="redirectModal" class="modal modal-fixed-footer modalStyle">
-    <div class="modal-content">
-        <h3 class="center-align">Thanks for Submitting Your Spot!</h3>
-    </div>
-</div>
+        <!-- Modal Structure For REDIRECT-->
+        <div id="redirectModal" class="modal modal-fixed-footer modalStyle lime darken-4">
+            <div class="modal-content lime darken-4">
+                <h3 class="center-align lime darken-4">Thanks for Submitting Your Spot!</h3>
+            </div>
+        </div>
 
 
 
 
 
     </main>
-    <footer class="page-footer">
+    <footer class="page-footer lime darken-4">
         <div class="container">
             <p class="grey-text text-lighten-4"> © 2018 - Ruff Spots</p>
 
