@@ -119,7 +119,7 @@ review.append(reviews);
             $('#successModal').modal('open');
             console.log(response);
             setTimeout(() => {
-                location.reload();
+                window.location="/search.html";
             }, 2000);
             }
         })
